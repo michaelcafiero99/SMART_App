@@ -39,8 +39,12 @@
         $.when(pt, obv, cond).done(function(patient, obv) {
           console.log("when statement")
           var byCodes = smart.byCodes(obv, 'code');
+          var byCodesCond = smart.byCodes(cond, 'code');
+          console.log(byCodes)
+          console.log(byCodesCond)
           var gender = patient.gender;
-          console.log(cond.toString())
+          console.log(cond)
+
           var fname = '';
           var lname = '';
 
