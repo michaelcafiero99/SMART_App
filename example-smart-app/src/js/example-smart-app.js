@@ -6,7 +6,10 @@
       console.log('Loading error', arguments);
       ret.reject();
     }
-
+//TODO: Fetch address, symptoms (condition call) of patient
+//TODO: Integrate google maps calls with patient zip
+//TODO: Implement LOINC dictionary from the google sheet
+//TODO: Create text processing pipeline
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
@@ -22,7 +25,17 @@
                     }
                   });
 
+        var cond = smart.patient.api.fetchAll({
+          type: 'Condition',
+          query: {
+
+          }
+        });
+        console.log(cond)
+        console.log("here here hereeeeeee")
         $.when(pt, obv).fail(onError);
+        $.when(pt, cond).fail(onError);
+
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
