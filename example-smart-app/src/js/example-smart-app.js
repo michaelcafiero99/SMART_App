@@ -30,13 +30,14 @@
           type: 'Condition',
 
         });
+        console.log(obv)
         console.log(cond)
-        console.log("here here hereeeeeee")
         $.when(pt, obv).fail(onError);
         $.when(pt, cond).fail(onError);
 
 
         $.when(pt, obv, cond).done(function(patient, obv) {
+          console.log("when statement")
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -49,11 +50,12 @@
           }
 
           var height = byCodes('8302-2');
+          //gets the two types of blood pressures with the specified codes
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
-
+          //sets p as a new empty patient object and populates it with the smart patient attributes
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
           p.gender = gender;
@@ -87,6 +89,7 @@
   function defaultPatient(){
     return {
       fname: {value: ''},
+      conditions: {value: ''},
       lname: {value: ''},
       gender: {value: ''},
       birthdate: {value: ''},
@@ -114,7 +117,7 @@
 
     return getQuantityValueAndUnit(formattedBPObservations[0]);
   }
-
+//gets the value and unit from an observation
   function getQuantityValueAndUnit(ob) {
     if (typeof ob != 'undefined' &&
         typeof ob.valueQuantity != 'undefined' &&
@@ -132,6 +135,7 @@
     $('#fname').html(p.fname);
     $('#lname').html(p.lname);
     $('#gender').html(p.gender);
+    $('#conditions').html(p.conditions);
     $('#birthdate').html(p.birthdate);
     $('#height').html(p.height);
     $('#systolicbp').html(p.systolicbp);
