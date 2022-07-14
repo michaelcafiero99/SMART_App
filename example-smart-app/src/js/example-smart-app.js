@@ -40,7 +40,7 @@
           console.log("when statement")
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
-
+          console.log(cond.toString())
           var fname = '';
           var lname = '';
 
