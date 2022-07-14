@@ -36,14 +36,14 @@
         $.when(pt, conds).fail(onError);
 
 
-        $.when(pt, obv, cond).done(function(patient, obv) {
+        $.when(pt, obv, conds).done(function(patient, obv) {
           console.log("when statement")
           conds.forEach(function(cond) {
             let code = cond.code
             console.log(code)
           });
           var byCodes = smart.byCodes(obv, 'code');
-          var byCodesCond = smart.byCodes(cond, 'code');
+          var byCodesCond = smart.byCodes(conds, 'code');
           console.log(byCodes)
           console.log(byCodesCond('75323-6'))
           var gender = patient.gender;
