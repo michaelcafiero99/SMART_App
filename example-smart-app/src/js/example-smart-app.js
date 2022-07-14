@@ -28,21 +28,23 @@
 
         var conds = smart.patient.api.fetchAll({
           type: 'Condition',
-          graph: true,
-          resolveReferences: [ "Condition" ]
+          query:{_count: 4}
+
         });
+
+        $.when(pt, conds).done(function(patient, conds) {
+          console.log(conds);
+        });
+
         console.log(obv)
         console.log(conds)
         $.when(pt, obv).fail(onError);
         $.when(pt, conds).fail(onError);
 
 
-        $.when(pt, obv, conds).done(function(patient, obv) {
+        $.when(pt, obv).done(function(patient, obv) {
           console.log("when statement")
-          conds.forEach(function(cond) {
-            let code = cond.code
-            console.log(code)
-          });
+
           var byCodes = smart.byCodes(obv, 'code');
           var byCodesCond = smart.byCodes(conds, 'code');
           console.log(byCodes)
