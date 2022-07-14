@@ -41,7 +41,7 @@
           var byCodes = smart.byCodes(obv, 'code');
           var byCodesCond = smart.byCodes(cond, 'code');
           console.log(byCodes)
-          console.log(byCodesCond)
+          console.log(byCodesCond('75323-6'))
           var gender = patient.gender;
           console.log(cond)
 
