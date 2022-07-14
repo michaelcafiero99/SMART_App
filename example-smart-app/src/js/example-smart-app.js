@@ -17,7 +17,7 @@
         var pt = patient.read();
 
         var conds = smart.patient.api.fetchAll({
-          type: 'Condition',
+          type: 'Encounter',
           query:{_count: 4}
 
         });
@@ -34,7 +34,7 @@
 
 
         $.when(pt, conds).done(function(patient, conds) {
-          console.log(conds);
+          console.log(conds.type);
         });
 
         console.log(obv)
