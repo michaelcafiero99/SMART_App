@@ -26,18 +26,22 @@
                     }
                   });
 
-        var cond = smart.patient.api.fetchAll({
+        var conds = smart.patient.api.fetchAll({
           type: 'Condition',
 
         });
         console.log(obv)
-        console.log(cond)
+        console.log(conds)
         $.when(pt, obv).fail(onError);
-        $.when(pt, cond).fail(onError);
+        $.when(pt, conds).fail(onError);
 
 
         $.when(pt, obv, cond).done(function(patient, obv) {
           console.log("when statement")
+          conds.forEach(function(cond) {
+            let code = cond.code
+            console.log(code)
+          });
           var byCodes = smart.byCodes(obv, 'code');
           var byCodesCond = smart.byCodes(cond, 'code');
           console.log(byCodes)
