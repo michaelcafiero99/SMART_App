@@ -27,9 +27,7 @@
 
         var cond = smart.patient.api.fetchAll({
           type: 'Condition',
-          query: {
 
-          }
         });
         console.log(cond)
         console.log("here here hereeeeeee")
