@@ -28,7 +28,8 @@
 
         var conds = smart.patient.api.fetchAll({
           type: 'Condition',
-
+          graph: true,
+          resolveReferences: [ "Condition" ]
         });
         console.log(obv)
         console.log(conds)
