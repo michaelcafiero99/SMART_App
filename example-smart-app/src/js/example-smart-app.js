@@ -34,7 +34,7 @@
 
 
         $.when(pt, conds).done(function(patient, conds) {
-          console.log(conds.type);
+          console.log(pt.type);
         });
 
         console.log(obv)
