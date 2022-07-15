@@ -19,8 +19,10 @@
         var conds = smart.patient.api.fetchAll({
           type: 'Encounter',
           //query:{_count: 4}
-
+          query:{}
         });
+        var enc = conds.read()
+        print(enc)
         var obv = smart.patient.api.fetchAll({
           type: 'Observation',
           query: {
