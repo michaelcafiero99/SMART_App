@@ -50,7 +50,7 @@
           var byCodesCond = smart.byCodes(conds, 'code');
           console.log(byCodes)
           console.log(byCodesCond('75323-6'))
-          var gender = patient.address;
+          var gender = patient.address[0];
 
           var fname = '';
           var lname = '';
