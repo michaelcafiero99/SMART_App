@@ -18,7 +18,7 @@
 
         var conds = smart.patient.api.fetchAll({
           type: 'Encounter',
-          //query:{_count: 4}
+          query:{_count: 4}
 
         });
         var obv = smart.patient.api.fetchAll({
@@ -34,11 +34,17 @@
 
 
         $.when(pt, conds).done(function(patient, conds) {
-          console.log(pt.type);
+          console.log(obv.type);
         });
 
         console.log(obv)
-        console.log(conds)
+        console.log(conds.status)
+        console.log(conds.type)
+        console.log(conds.type)
+        console.log(conds.priority)
+
+
+
         $.when(pt, obv).fail(onError);
         $.when(pt, conds).fail(onError);
 
