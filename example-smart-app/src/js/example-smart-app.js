@@ -18,7 +18,7 @@
 
         var conds = smart.patient.api.fetchAll({
           type: 'Encounter',
-          query:{_count: 4}
+          //query:{_count: 4}
 
         });
         var obv = smart.patient.api.fetchAll({
