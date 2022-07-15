@@ -21,8 +21,8 @@
           //query:{_count: 4}
           query:{}
         });
-        var enc = conds.read()
-        print(enc)
+        //var enc = conds.read()
+        //print(enc)
         var obv = smart.patient.api.fetchAll({
           type: 'Observation',
           query: {
@@ -58,7 +58,7 @@
           var byCodesCond = smart.byCodes(conds, 'code');
           console.log(byCodes)
           console.log(byCodesCond('75323-6'))
-          var gender = patient.address[0];
+          var gender = patient.gender;
 
           var fname = '';
           var lname = '';
