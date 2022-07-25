@@ -61,8 +61,8 @@ function click_auto(string, priority) {
           });
 
           console.log(obv)
-          console.log(conds.status)
-          console.log(conds.type)
+          console.log(conds[0].status)
+          console.log(conds[0].type)
           console.log(conds.type)
           console.log(conds.priority)
 
