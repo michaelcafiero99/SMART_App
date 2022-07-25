@@ -43,8 +43,7 @@ function click_auto(string, priority) {
             //query:{_count: 4}
             query: {}
           });
-          var enc = conds.read()
-          console.log(enc)
+          console.log(conds)
           var obv = smart.patient.api.fetchAll({
             type: 'Observation',
             query: {
