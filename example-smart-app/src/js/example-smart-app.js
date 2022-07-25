@@ -39,7 +39,7 @@ function click_auto(string, priority) {
           var pt = patient.read();
 
           var conds = smart.patient.api.fetchAll({
-            type: 'Observation',
+            type: 'Condition',
             query:{_count: 4}
             //query: {}
           });
@@ -61,8 +61,8 @@ function click_auto(string, priority) {
           });
 
           console.log(obv)
-          console.log(conds[0].status)
-          console.log(conds[0].type)
+          console.log(conds)
+          console.log(conds)
           console.log(conds.type)
           console.log(conds.priority)
 
