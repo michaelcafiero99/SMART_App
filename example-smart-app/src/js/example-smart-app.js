@@ -40,8 +40,8 @@ function click_auto(string, priority) {
 
           var conds = smart.patient.api.fetchAll({
             type: 'Observation',
-            //query:{_count: 4}
-            query: {}
+            query:{_count: 4}
+            //query: {}
           });
           console.log(conds)
           var obv = smart.patient.api.fetchAll({
